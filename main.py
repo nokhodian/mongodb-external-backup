@@ -23,6 +23,7 @@ def upload_to_s3(file_name, bucket_name, object_name=None):
 def main():
     instances = json.loads(os.getenv('MONGO_INSTANCES'))
     bucket_name = os.getenv('AWS_BUCKET_NAME')
+    total_wait = os.getenv('TOTAL_WAIT')
     while True:
         for instance in instances:
             backup_name = f"{instance['name']}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.gz"
@@ -33,7 +34,7 @@ def main():
             os.remove(backup_name)
             print(f"Backup and upload for {instance['name']} completed.")
             sleep(instance[50])
-        sleep(instance['wait_seconds'])
+        sleep(total_wait)
 
 if __name__ == "__main__":
     main()

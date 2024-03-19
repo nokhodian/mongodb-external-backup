@@ -35,6 +35,7 @@ AWS_ACCESS_KEY_ID=your_access_key_id
 AWS_SECRET_ACCESS_KEY=your_secret_access_key
 AWS_BUCKET_NAME=your_bucket_name
 AWS_REGION=your_aws_region
+TOTAL_WAIT=wait_time_betweenbackups_in_seconds
 ```
 
 ### Terraform S3 Bucket Setup 🪣 (you can create your s3 bucket on your side or use this script)

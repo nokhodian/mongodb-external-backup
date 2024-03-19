@@ -33,7 +33,7 @@ def main():
             upload_to_s3(backup_name, bucket_name)
             os.remove(backup_name)
             print(f"Backup and upload for {instance['name']} completed.")
-            sleep(instance[50])
+            sleep(50)
         sleep(total_wait)
 
 if __name__ == "__main__":
